@@ -1,15 +1,15 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
-import { getAllPokemon, getPokemon } from './services/pokemon';
-import Card from './components/Card';
-import Navbar from './components/Navbar';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import { getAllPokemon, getPokemon } from "./services/pokemon";
+import Card from "./components/Card";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
-  const [nextUrl, setNextUrl] = useState('');
-  const [prevUrl, setPrevUrl] = useState('');
+  const [nextUrl, setNextUrl] = useState("");
+  const [prevUrl, setPrevUrl] = useState("");
   const [loading, setLoading] = useState(true);
-  const initialUrl = 'https://pokeapi.co/api/v2/pokemon';
+  const initialUrl = "https://pokeapi.co/api/v2/pokemon";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,16 +61,16 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <div className='btn'>
+          <div className="btn">
             <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next THing</button>
+            <button onClick={next}>Next</button>
           </div>
-          <div className='grid-container'>
+          <div className="grid-container">
             {pokemonData.map((pokemon, index) => {
               return <Card key={index} pokemon={pokemon} />;
             })}
           </div>
-          <div className='btn'>
+          <div className="btn">
             <button onClick={prev}>Prev</button>
             <button onClick={next}>Next</button>
           </div>

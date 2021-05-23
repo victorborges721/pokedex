@@ -9,6 +9,7 @@ p {
 
 .Card-img {
   text-align: center;
+  height: 5rem;
 }
 
 .Card-types {
@@ -22,6 +23,7 @@ p {
   border-radius: 5px;
   background: cyan;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .Card-name {
@@ -36,6 +38,7 @@ p {
 
 .Card-data {
   padding-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .Card-data .title {
