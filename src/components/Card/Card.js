@@ -3,6 +3,9 @@ import "./style.css";
 import pokemonType from "../../helpers/pokemonTypes";
 
 const Card = ({ pokemon }) => {
+  const baseUrl =
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+  const spriteUrl = baseUrl + pokemon.id + ".png";
   const padZeros = (num, size) => {
     num = num.toString();
     while (num.length < size) num = "0" + num;
@@ -12,11 +15,17 @@ const Card = ({ pokemon }) => {
   const pokeNum = padZeros(pokemon.id, 3);
 
   return (
-    <div className="Card">
+    <div className="Card hvr-grow">
       <div className="Card-img">
-        <img src={pokemon.sprites.front_default} alt="" />
+        {/* prettier-ignore */}
+        <img
+          src={spriteUrl}
+          alt=""
+        />
       </div>
-      <div className="Card-name">{pokemon.name}</div>
+      <div className="Card-name">
+        {pokemon.name} <span className="Card-num">#{pokeNum}</span>
+      </div>
       <div className="Card-types">
         {pokemon.types.map((type) => {
           return (
@@ -29,15 +38,11 @@ const Card = ({ pokemon }) => {
           );
         })}
       </div>
-      <div className="Card-info">
+      {/* <div className="Card-info">
         <div className="Card-data Card-data-number">
           <p className="title">National Dex #{pokeNum}</p>
         </div>
-        <div className="Card-data Card-data-ability">
-          <p className="title">Ability</p>
-          <p>{pokemon.abilities[0].ability.name}</p>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };

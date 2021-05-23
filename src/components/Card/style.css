@@ -1,15 +1,20 @@
-p {
-  margin: 0;
-}
-
 .Card {
   background: white;
   border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Card-img {
   text-align: center;
-  height: 5rem;
+}
+
+.Card-img img {
+  height: 13rem;
 }
 
 .Card-types {
@@ -24,15 +29,24 @@ p {
   background: cyan;
   color: #fff;
   text-transform: capitalize;
+  width: 100px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .Card-name {
   text-align: center;
   text-transform: capitalize;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
-.Card-info {
+.Card-num {
+  font-weight: 400;
+  color: gray;
+}
+
+/* .Card-info {
   margin-left: 10px;
 }
 
@@ -43,4 +57,22 @@ p {
 
 .Card-data .title {
   font-weight: 700;
+} */
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

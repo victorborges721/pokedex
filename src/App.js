@@ -52,8 +52,6 @@ function App() {
     setPokemonData(_pokemonData);
   };
 
-  console.log(pokemonData);
-
   return (
     <div>
       {loading ? (
