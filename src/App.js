@@ -1,80 +1,33 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import { getAllPokemon, getPokemon } from "./services/pokemon";
-import Card from "./components/Card";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SinglePokemon from "./pages/SinglePokemon";
+import Error from "./pages/Error";
+// import components
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([]);
-  const [nextUrl, setNextUrl] = useState("");
-  const [prevUrl, setPrevUrl] = useState("");
-  const [loading, setLoading] = useState(true);
-  const initialUrl = "https://pokeapi.co/api/v2/pokemon";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      let response = await getAllPokemon(initialUrl);
-      setNextUrl(response.next);
-      setPrevUrl(response.previous);
-      let pokemon = await loadingPokemon(response.results);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
-  const next = async () => {
-    setLoading(true);
-    let data = await getAllPokemon(nextUrl);
-    await loadingPokemon(data.results);
-    setNextUrl(data.next);
-    setPrevUrl(data.previous);
-    setLoading(false);
-  };
-
-  const prev = async () => {
-    if (!prevUrl) return;
-    setLoading(true);
-    let data = await getAllPokemon(prevUrl);
-    await loadingPokemon(data.results);
-    setNextUrl(data.next);
-    setPrevUrl(data.previous);
-    setLoading(false);
-  };
-
-  const loadingPokemon = async (data) => {
-    let _pokemonData = await Promise.all(
-      data.map(async (pokemon) => {
-        let pokemonRecord = await getPokemon(pokemon.url);
-        return pokemonRecord;
-      })
-    );
-
-    setPokemonData(_pokemonData);
-  };
-
   return (
-    <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <>
-          <Navbar />
-          <div className="btn">
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
-          </div>
-          <div className="grid-container">
-            {pokemonData.map((pokemon, index) => {
-              return <Card key={index} pokemon={pokemon} />;
-            })}
-          </div>
-          <div className="btn">
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
-          </div>
-        </>
-      )}
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/pokemon/:id">
+          <SinglePokemon />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
