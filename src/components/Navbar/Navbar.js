@@ -15,12 +15,15 @@ const NavigationBar = () => {
           Pokédex
         </Navbar.Brand>
         <Nav className="mr-sm-2">
-          <Link to="/">
-            <Nav.Link>Home</Nav.Link>
-          </Link>
-          <Link to="/about">
-            <Nav.Link>About</Nav.Link>
-          </Link>
+          <Nav.Link>
+            <Link to="/">Home</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/typechart">Type Chart</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/about">About</Link>
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>

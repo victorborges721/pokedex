@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePokemon from "./pages/SinglePokemon";
+import TypeChart from "./pages/TypeChart";
 import Error from "./pages/Error";
 // import components
 import NavigationBar from "./components/Navbar";
@@ -16,6 +17,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/typechart">
+          <TypeChart />
         </Route>
         <Route path="/about">
           <About />

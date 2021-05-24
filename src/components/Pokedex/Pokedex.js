@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAllPokemon, getPokemon } from "../../services/pokemon";
 import Card from "../Card";
+import { Button, ButtonGroup, Container } from "react-bootstrap";
 import "./style.css";
 
 const Pokedex = () => {
@@ -56,21 +57,33 @@ const Pokedex = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <>
-          <div className="btn">
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
+        <section className="Pokedex">
+          <div className="Pokedex-buttons">
+            <ButtonGroup>
+              <Button variant="dark" onClick={prev}>
+                Prev
+              </Button>
+              <Button variant="dark" onClick={next}>
+                Next
+              </Button>
+            </ButtonGroup>
           </div>
           <div className="grid-container">
             {pokemonData.map((pokemon, index) => {
               return <Card key={index} pokemon={pokemon} />;
             })}
           </div>
-          <div className="btn">
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
+          <div className="Pokedex-buttons">
+            <ButtonGroup>
+              <Button variant="dark" onClick={prev}>
+                Prev
+              </Button>
+              <Button variant="dark" onClick={next}>
+                Next
+              </Button>
+            </ButtonGroup>
           </div>
-        </>
+        </section>
       )}
     </div>
   );
