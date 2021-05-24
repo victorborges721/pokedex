@@ -1,13 +1,13 @@
-.Navbar {
+/* .Navbar {
   padding: 20px;
   background: #ff4236;
   color: white;
   height: 5rem;
   display: flex;
   align-items: center;
-}
+} */
 
-.Navbar-center {
+/* .Navbar-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@
 
 .Navbar-links a:hover {
   color: black;
-}
+} */
 
 .logo {
   height: 2.3rem;

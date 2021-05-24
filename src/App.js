@@ -7,12 +7,12 @@ import About from "./pages/About";
 import SinglePokemon from "./pages/SinglePokemon";
 import Error from "./pages/Error";
 // import components
-import Navbar from "./components/Navbar";
+import NavigationBar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <NavigationBar />
       <Switch>
         <Route exact path="/">
           <Home />
