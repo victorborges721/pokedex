@@ -1,29 +1,30 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import "./style.css";
-import pokeball from "../../images/pokeball.png";
+import { CgPokemon } from "react-icons/cg";
 
 const NavigationBar = () => {
   return (
     <Navbar bg="danger">
       <Container>
-        <Navbar.Brand href="/">
-          <span>
-            <img className="logo" src={pokeball} alt="pokeball" />
-          </span>
-          Pokédex
-        </Navbar.Brand>
+        <LinkContainer to="/" className="logo">
+          <Navbar.Brand>
+            <CgPokemon size="2rem" />
+            Pokédex
+          </Navbar.Brand>
+        </LinkContainer>
+
         <Nav className="mr-sm-2">
-          <Nav.Link>
-            <Link to="/">Home</Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link to="/typechart">Type Chart</Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link to="/about">About</Link>
-          </Nav.Link>
+          <LinkContainer to="/">
+            <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/typechart">
+            <Nav.Link>TypeChart</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/about">
+            <Nav.Link>About</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Container>
     </Navbar>

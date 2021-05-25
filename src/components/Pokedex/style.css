@@ -2,6 +2,12 @@
   margin: 3rem 0;
 } */
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Pokedex-buttons {
   display: flex;
   justify-content: center;

@@ -44,6 +44,5 @@
 } */
 
 .logo {
-  height: 2.3rem;
-  margin: 7px;
+  display: flex;
 }

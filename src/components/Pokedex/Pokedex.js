@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getPokemon } from "../../services/pokemon";
 import Card from "../Card";
-import { Button, ButtonGroup, Container } from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
 
 const Pokedex = () => {
@@ -16,7 +16,7 @@ const Pokedex = () => {
       let response = await getPokemon(initialUrl);
       setNextUrl(response.next);
       setPrevUrl(response.previous);
-      let pokemon = await loadingPokemon(response.results);
+      await loadingPokemon(response.results);
       setLoading(false);
     };
     fetchData();
@@ -55,7 +55,7 @@ const Pokedex = () => {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 className="loading">Loading...</h1>
       ) : (
         <section className="Pokedex">
           <div className="Pokedex-buttons">
@@ -69,8 +69,8 @@ const Pokedex = () => {
             </ButtonGroup>
           </div>
           <div className="grid-container">
-            {pokemonData.map((pokemon, index) => {
-              return <Card key={index} pokemon={pokemon} />;
+            {pokemonData.map((pokemon) => {
+              return <Card key={pokemon.id} pokemon={pokemon} />;
             })}
           </div>
           <div className="Pokedex-buttons">

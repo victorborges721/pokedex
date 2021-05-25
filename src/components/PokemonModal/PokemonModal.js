@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import pokemonType from "../../helpers/typeColors";
 import typeWeak from "../../helpers/typeWeak";
-import { getPokemon } from "../../services/pokemon";
+// import { getPokemon } from "../../services/pokemon";
 import "./style.css";
 
 const PokemonModal = ({ pokemon, showModal, handleClose, spriteUrl }) => {
@@ -50,11 +50,12 @@ const PokemonModal = ({ pokemon, showModal, handleClose, spriteUrl }) => {
                 <Col xs={12} md={7}>
                   <div className="Modal-types">
                     <h5>Type(s):</h5>
-                    {pokemon.types.map((type) => {
+                    {pokemon.types.map((type, index) => {
                       return (
                         <div
                           className="Modal-type"
                           style={{ background: pokemonType[type.type.name] }}
+                          key={index}
                         >
                           {type.type.name}
                         </div>
@@ -63,11 +64,12 @@ const PokemonModal = ({ pokemon, showModal, handleClose, spriteUrl }) => {
                   </div>
                   <div className="Modal-types">
                     <h5>Weaknesses:</h5>
-                    {weaknesses.map((weakness) => {
+                    {weaknesses.map((weakness, index) => {
                       return (
                         <div
                           className="Modal-type"
                           style={{ background: pokemonType[weakness] }}
+                          key={index}
                         >
                           {weakness}
                         </div>

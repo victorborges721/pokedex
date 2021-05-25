@@ -7,7 +7,7 @@ const About = () => {
       <h1 className="section-title">About our Pokedex</h1>
       <p>
         This app uses the{" "}
-        <a href="https://pokeapi.co/" target="_blank">
+        <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">
           PokeAPI
         </a>{" "}
         to provide you with the most relevant information about each individual
