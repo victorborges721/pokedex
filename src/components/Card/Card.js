@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import "./style.css";
-import pokemonType from "../../helpers/pokemonTypes";
+import pokemonType from "../../helpers/typeColors";
 import PokemonModal from "../PokemonModal";
 
 const Card = ({ pokemon }) => {

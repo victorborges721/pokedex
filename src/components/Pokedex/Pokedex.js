@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAllPokemon, getPokemon } from "../../services/pokemon";
+import { getPokemon } from "../../services/pokemon";
 import Card from "../Card";
 import { Button, ButtonGroup, Container } from "react-bootstrap";
 import "./style.css";
@@ -13,7 +13,7 @@ const Pokedex = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await getAllPokemon(initialUrl);
+      let response = await getPokemon(initialUrl);
       setNextUrl(response.next);
       setPrevUrl(response.previous);
       let pokemon = await loadingPokemon(response.results);
@@ -24,7 +24,7 @@ const Pokedex = () => {
 
   const next = async () => {
     setLoading(true);
-    let data = await getAllPokemon(nextUrl);
+    let data = await getPokemon(nextUrl);
     await loadingPokemon(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
@@ -34,7 +34,7 @@ const Pokedex = () => {
   const prev = async () => {
     if (!prevUrl) return;
     setLoading(true);
-    let data = await getAllPokemon(prevUrl);
+    let data = await getPokemon(prevUrl);
     await loadingPokemon(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
