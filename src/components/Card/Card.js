@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-import pokemonType from "../../helpers/typeColors";
+import pokemonType from "../../data/typeColors";
 import PokemonModal from "../PokemonModal";
 
 const Card = ({ pokemon }) => {
@@ -45,6 +45,7 @@ const Card = ({ pokemon }) => {
       </div>
       <PokemonModal
         pokemon={pokemon}
+        pokeNum={pokeNum}
         showModal={showModal}
         handleClose={handleClose}
         spriteUrl={spriteUrl}

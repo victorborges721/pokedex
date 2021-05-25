@@ -1,0 +1,53 @@
+.Modal-img img {
+  width: 100%;
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
+.Modal-types {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Modal-type {
+  padding: 5px 10px;
+  margin: 10px 0 10px 10px;
+  border-radius: 5px;
+  background: cyan;
+  color: #fff;
+  text-transform: capitalize;
+  width: 100px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.Modal-name {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.Modal-num {
+  font-weight: 400;
+  color: gray;
+}
+
+.Modal-info {
+  background-color: #dc3545;
+  color: black;
+  border-radius: 10px;
+  padding: 10px 0;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.Modal-info-subtitle {
+  color: white;
+}
+
+.Modal-ability {
+  text-transform: capitalize;
+}
