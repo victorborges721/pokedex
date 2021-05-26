@@ -15,9 +15,12 @@ const NavigationBar = () => {
           </Navbar.Brand>
         </LinkContainer>
 
-        <Nav className="mr-sm-2">
+        <Nav>
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/pokedex">
+            <Nav.Link>Pokedex</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/typechart">
             <Nav.Link>TypeChart</Nav.Link>
@@ -28,27 +31,6 @@ const NavigationBar = () => {
         </Nav>
       </Container>
     </Navbar>
-
-    // <nav className="Navbar">
-    //   <div className="Navbar-center">
-    //     <Link to="/">
-    //       <h1 className="Navbar-logo">
-    //         <span>
-    //           <img className="logo" src={pokeball} alt="pokeball" />
-    //         </span>
-    //         Pokédex
-    //       </h1>
-    //     </Link>
-    //     <ul className="Navbar-links">
-    //       <li>
-    //         <Link to="/">Home</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/about">About</Link>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </nav>
   );
 };
 

@@ -3,8 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import pages
 import Home from "./pages/Home";
+import Pokedex from "./pages/Pokedex";
 import About from "./pages/About";
-import SinglePokemon from "./pages/SinglePokemon";
 import TypeChart from "./pages/TypeChart";
 import Error from "./pages/Error";
 // import components
@@ -18,14 +18,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="/pokedex">
+          <Pokedex />
+        </Route>
         <Route path="/typechart">
           <TypeChart />
         </Route>
         <Route path="/about">
           <About />
-        </Route>
-        <Route path="/pokemon/:id">
-          <SinglePokemon />
         </Route>
         <Route path="*">
           <Error />
