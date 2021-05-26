@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getPokemon } from "../../helpers/pokemon";
+import { getPokemon } from "../../helpers/getPokemon";
 import Card from "../Card";
 import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
@@ -48,7 +48,6 @@ const Pokedex = () => {
         return pokemonRecord;
       })
     );
-
     setPokemonData(_pokemonData);
   };
 

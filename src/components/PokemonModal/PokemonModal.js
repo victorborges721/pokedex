@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import {
+  Button,
+  Col,
+  Container,
+  Modal,
+  ProgressBar,
+  Row,
+} from "react-bootstrap";
 import typeColors from "../../data/typeColors";
-import typeWeak from "../../data/typeWeak";
-// import { getPokemon } from "../../services/pokemon";
+import { getPokemon } from "../../helpers/getPokemon";
 import getMultipliers from "../../helpers/getMultipliers.js";
+import getEvolutions from "../../helpers/getEvolutions.js";
 import "./style.css";
 
 const PokemonModal = ({
@@ -12,23 +19,43 @@ const PokemonModal = ({
   showModal,
   handleClose,
   spriteUrl,
+  modalLoading,
 }) => {
-  const [modalLoading, setModalLoading] = useState(false);
-  //   const [typeData, setTypeData] = useState([]);
+  // const [modalLoading, setModalLoading] = useState(false);
+  // const [evoData, setEvoData] = useState({});
+  // const [evoChain, setEvoChain] = useState([]);
+  // let evoUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}`;
 
-  //   useEffect(() => {
-  //     let typesUrl = `https://pokeapi.co/api/v2/type/${pokemon.id}/`;
-  //     setModalLoading(true);
-  //     const fetchPokemonData = async () => {
-  //       let response = await getPokemon(typesUrl);
-  //       setTypeData(response);
-  //       setModalLoading(false);
+  // useEffect(() => {
+  //   setModalLoading(true);
+  //   if (showModal) {
+  //     const fetchEvoData = async () => {
+  //       let responseSpecies = await getPokemon(evoUrl);
+  //       let responseEvo = await getPokemon(responseSpecies.evolution_chain.url);
+  //       console.log(responseSpecies.evolution_chain.url);
+  //       setEvoData(responseEvo.chain);
+  //       // await loadingEvo(responseEvo.chain);
+  //       console.log(responseEvo.chain);
+  //       console.log(evoData);
+  //       setEvoChain(getEvolutions(evoData, evoChain));
+  //       console.log(evoChain);
   //     };
-  //     fetchPokemonData();
-  //     console.log(typeData);
-  //   }, [showModal]);
+  //     fetchEvoData();
+  //     setModalLoading(false);
+  //   }
+  // }, [showModal]);
 
-  // pulls types from PokeAPI
+  // const loadingEvo = async (data) => {
+  //   let _evoData = await Promise.all(
+  //     data.map(async (pokemon) => {
+  //       let pokemonRecord = await getPokemon(pokemon.url);
+  //       return pokemonRecord;
+  //     })
+  //   );
+  //   setEvoData(_evoData);
+  // };
+
+  // pulls types from PokeAPI data
   const pokemonTypes = [];
   pokemonTypes.push(pokemon.types[0].type.name);
   if (pokemon.types[1]) {
@@ -52,13 +79,23 @@ const PokemonModal = ({
     pokemonAbilities.push(pokemon.abilities[1].ability.name);
   }
 
-  // calculate height from decimeters to feet/inches
+  // convert height from decimeters to feet/inches
   const pokemonTotalInches = pokemon.height * 3.93701;
   const pokemonFeet = Math.floor(pokemonTotalInches / 12);
   const pokemonInches = pokemonTotalInches - pokemonFeet * 12;
 
-  // calculate weight from hectograms to lbs
+  // convert weight from hectograms to lbs
   const pokemonWeight = pokemon.weight / 4.536;
+
+  // pull pokemon stats from PokeAPI data
+  const stats = [
+    { stat: "HP", num: pokemon.stats[0].base_stat },
+    { stat: "Atk", num: pokemon.stats[1].base_stat },
+    { stat: "Def", num: pokemon.stats[2].base_stat },
+    { stat: "Sp.Atk", num: pokemon.stats[3].base_stat },
+    { stat: "Sp.Def", num: pokemon.stats[4].base_stat },
+    { stat: "Speed", num: pokemon.stats[5].base_stat },
+  ];
 
   return (
     <>
@@ -80,11 +117,13 @@ const PokemonModal = ({
           <Modal.Body>
             <Container>
               <Row>
+                {/* Pokemon Image */}
                 <Col xs={12} md={5}>
                   <div className="Modal-img">
                     <img src={spriteUrl} alt={pokemon.name} />
                   </div>
                 </Col>
+                {/* Pokemon Types */}
                 <Col xs={12} md={7}>
                   <div className="Modal-types">
                     <h5>Type(s):</h5>
@@ -100,6 +139,7 @@ const PokemonModal = ({
                       );
                     })}
                   </div>
+                  {/* Pokemon Weaknesses */}
                   <div className="Modal-types">
                     <h5>Weaknesses:</h5>
                     {weaknesses.map((weakness, index) => {
@@ -114,6 +154,7 @@ const PokemonModal = ({
                       );
                     })}
                   </div>
+                  {/* Pokemon Info (Height, Weight, Abilities) */}
                   <div className="Modal-info">
                     <Container>
                       <Row>
@@ -127,9 +168,11 @@ const PokemonModal = ({
                         </Col>
                         <Col xs="6">
                           <h5 className="Modal-info-subtitle">Abilities:</h5>
-                          {pokemonAbilities.map((ability) => {
+                          {pokemonAbilities.map((ability, index) => {
                             return (
-                              <h5 className="Modal-ability">{ability} </h5>
+                              <h5 key={index} className="Modal-ability">
+                                {ability}{" "}
+                              </h5>
                             );
                           })}
                         </Col>
@@ -139,8 +182,37 @@ const PokemonModal = ({
                 </Col>
               </Row>
               <Row>
+                {/* Pokemon Base Stats */}
                 <Col>
-                  <h1>Evolutions</h1>
+                  <h5>Base Stats:</h5>
+                  <table>
+                    {stats.map((stat, index) => {
+                      return (
+                        <tr key={index} className="Modal-stats">
+                          <td>{stat.stat}</td>
+                          <td className="table-row">
+                            <ProgressBar
+                              now={stat.num}
+                              max="255"
+                              label={stat.num}
+                              variant="danger"
+                              striped
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  {/* Pokemon Evolutions */}
+                  <div className="Modal-evolutions">
+                    <Container>
+                      <h5>Evolutions</h5>
+                    </Container>
+                  </div>
                 </Col>
               </Row>
             </Container>
