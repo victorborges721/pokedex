@@ -30,3 +30,19 @@
   width: 100vw;
   height: 100px;
 } */
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jumbotron-text {
+  background-color: rgba(211, 211, 211, 0.6);
+  width: 50%;
+  border-radius: 10px;
+  padding: 20px;
+}
+.jumbotron-title {
+  font-size: 4rem;
+}

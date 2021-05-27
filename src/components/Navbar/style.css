@@ -46,3 +46,7 @@
 .logo {
   display: flex;
 }
+
+.navbar {
+  border-bottom: 4px black solid;
+}

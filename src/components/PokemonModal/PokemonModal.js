@@ -205,16 +205,6 @@ const PokemonModal = ({
                   </table>
                 </Col>
               </Row>
-              <Row>
-                <Col>
-                  {/* Pokemon Evolutions */}
-                  <div className="Modal-evolutions">
-                    <Container>
-                      <h5>Evolutions</h5>
-                    </Container>
-                  </div>
-                </Col>
-              </Row>
             </Container>
           </Modal.Body>
           <Modal.Footer>

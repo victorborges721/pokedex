@@ -6,7 +6,7 @@ import { CgPokemon } from "react-icons/cg";
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="danger">
+    <Navbar bg="danger" className="navbar">
       <Container>
         <LinkContainer to="/" className="logo">
           <Navbar.Brand>
