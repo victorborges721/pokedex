@@ -9,6 +9,7 @@ import {
   getPokeSprite,
 } from "../../helpers/pokeCalcs";
 import typeColors from "../../data/typeColors";
+import "./style.css";
 
 const SearchDisplay = ({ pokemonQuery }) => {
   // pulls types from PokeAPI data
@@ -28,23 +29,24 @@ const SearchDisplay = ({ pokemonQuery }) => {
   const stats = getPokeStats(pokemonQuery);
   return (
     <div>
-      <h1>{pokemonQuery.name}</h1>
       <Container>
         <Row>
           {/* Pokemon Image */}
           <Col xs={12} md={5}>
-            <div className="Modal-img">
+            <div className="Search-img">
               <img src={spriteUrl} alt={pokemonQuery.name} />
             </div>
           </Col>
           {/* Pokemon Types */}
           <Col xs={12} md={7}>
-            <div className="Modal-types">
+            <h1 className="Search-name">{pokemonQuery.name}</h1>
+
+            <div className="Search-types">
               <h5>Type(s):</h5>
               {pokemonTypes.map((type, index) => {
                 return (
                   <div
-                    className="Modal-type"
+                    className="Search-type"
                     style={{ background: typeColors[type] }}
                     key={index}
                   >
@@ -54,12 +56,12 @@ const SearchDisplay = ({ pokemonQuery }) => {
               })}
             </div>
             {/* Pokemon Weaknesses */}
-            <div className="Modal-types">
+            <div className="Search-types">
               <h5>Weaknesses:</h5>
               {weaknesses.map((weakness, index) => {
                 return (
                   <div
-                    className="Modal-type"
+                    className="Search-type"
                     style={{ background: typeColors[weakness] }}
                     key={index}
                   >
@@ -69,22 +71,22 @@ const SearchDisplay = ({ pokemonQuery }) => {
               })}
             </div>
             {/* Pokemon Info (Height, Weight, Abilities) */}
-            <div className="Modal-info">
+            <div className="Search-info">
               <Container>
                 <Row>
                   <Col xs="6">
-                    <h5 className="Modal-info-subtitle">Height:</h5>
+                    <h5 className="Search-info-subtitle">Height:</h5>
                     <h5>
                       {pokemonFeet}' {pokemonInches.toFixed(0)}"
                     </h5>
-                    <h5 className="Modal-info-subtitle">Weight: </h5>
+                    <h5 className="Search-info-subtitle">Weight: </h5>
                     <h5>{pokemonWeight.toFixed(1)} lbs</h5>
                   </Col>
                   <Col xs="6">
-                    <h5 className="Modal-info-subtitle">Abilities:</h5>
+                    <h5 className="Search-info-subtitle">Abilities:</h5>
                     {pokemonAbilities.map((ability, index) => {
                       return (
-                        <h5 key={index} className="Modal-ability">
+                        <h5 key={index} className="Search-ability">
                           {ability}{" "}
                         </h5>
                       );
@@ -93,32 +95,35 @@ const SearchDisplay = ({ pokemonQuery }) => {
                 </Row>
               </Container>
             </div>
+            <Row>
+              {/* Pokemon Base Stats */}
+              <Col>
+                <h5>Base Stats:</h5>
+                <table>
+                  <tbody>
+                    {stats.map((stat, index) => {
+                      return (
+                        <tr key={index} className="Search-stats">
+                          <td>{stat.stat}</td>
+                          <td className="Search-table-row">
+                            <ProgressBar
+                              now={stat.num}
+                              max="255"
+                              label={stat.num}
+                              variant="danger"
+                              striped
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </Col>
+            </Row>
           </Col>
         </Row>
-        <Row>
-          {/* Pokemon Base Stats */}
-          <Col>
-            <h5>Base Stats:</h5>
-            <table>
-              {stats.map((stat, index) => {
-                return (
-                  <tr key={index} className="Modal-stats">
-                    <td>{stat.stat}</td>
-                    <td className="table-row">
-                      <ProgressBar
-                        now={stat.num}
-                        max="255"
-                        label={stat.num}
-                        variant="danger"
-                        striped
-                      />
-                    </td>
-                  </tr>
-                );
-              })}
-            </table>
-          </Col>
-        </Row>
+        <Row></Row>
       </Container>
     </div>
   );

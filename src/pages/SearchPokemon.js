@@ -10,14 +10,17 @@ const SearchPokemon = () => {
   const searchPokemon = async (query) => {
     setSearchLoading(true);
     const response = await getSearchPokemon(query);
-    console.log(response);
     const results = await response.json();
     setPokemonQuery(results);
     setSearchLoading(false);
   };
+
   return (
     <div>
-      <Search searchPokemon={searchPokemon} />
+      <div className="Search-bar">
+        <Search searchPokemon={searchPokemon} />
+      </div>
+
       {!searchLoading && pokemonQuery ? (
         <SearchDisplay pokemonQuery={pokemonQuery} />
       ) : null}

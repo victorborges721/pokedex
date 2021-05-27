@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Button,
   Col,
@@ -129,7 +129,7 @@ const PokemonModal = ({
                       return (
                         <tr key={index} className="Modal-stats">
                           <td>{stat.stat}</td>
-                          <td className="table-row">
+                          <td className="Modal-table-row">
                             <ProgressBar
                               now={stat.num}
                               max="255"

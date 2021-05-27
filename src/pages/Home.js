@@ -17,8 +17,8 @@ const Home = () => {
         <div className="jumbotron-text">
           <h1 className="jumbotron-title">Gotta Catch 'Em All!</h1>
           <p>
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
+            Visit the Pokédex to browse the numerous Pokémon that inhabit the
+            world, or search for a specific Pokémon to learn more about it!
           </p>
           <div className="jumbotron-buttons">
             <Link to="/pokedex">

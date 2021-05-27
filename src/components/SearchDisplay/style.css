@@ -1,0 +1,63 @@
+.Search-img img {
+  width: 100%;
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.Search-types {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Search-type {
+  padding: 5px 10px;
+  margin: 10px 0 10px 10px;
+  border-radius: 5px;
+  background: cyan;
+  color: #fff;
+  text-transform: capitalize;
+  width: 80px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.Search-name {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.Modal-num {
+  font-weight: 400;
+  color: gray;
+}
+
+.Search-info {
+  background-color: #dc3545;
+  color: black;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.Search-info-subtitle {
+  color: white;
+}
+
+.Search-ability {
+  text-transform: capitalize;
+}
+
+.Search-table-row {
+  width: 100%;
+}
+
+.Modal-evolutions {
+  background-color: #6c757d;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin: 10px 0;
+}

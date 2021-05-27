@@ -52,14 +52,7 @@
   text-transform: capitalize;
 }
 
-.Modal-stats {
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center; */
-  /* margin: 5px 0; */
-}
-
-.table-row {
+.Modal-table-row {
   width: 100%;
 }
 
