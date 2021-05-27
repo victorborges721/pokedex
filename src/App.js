@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import pages
 import Home from "./pages/Home";
 import Pokedex from "./pages/Pokedex";
+import SearchPokemon from "./pages/SearchPokemon";
 import About from "./pages/About";
 import TypeChart from "./pages/TypeChart";
 import Error from "./pages/Error";
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/pokedex">
           <Pokedex />
+        </Route>
+        <Route path="/searchpokemon">
+          <SearchPokemon />
         </Route>
         <Route path="/typechart">
           <TypeChart />
