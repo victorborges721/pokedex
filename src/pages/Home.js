@@ -20,13 +20,18 @@ const Home = () => {
             This is a simple hero unit, a simple jumbotron-style component for
             calling extra attention to featured content or information.
           </p>
-          <p>
+          <div className="jumbotron-buttons">
             <Link to="/pokedex">
-              <Button variant="danger" size="lg">
+              <Button variant="danger" size="lg" className="jumbotron-button">
                 Visit Pokédex
               </Button>
             </Link>
-          </p>
+            <Link to="/searchpokemon">
+              <Button variant="danger" size="lg" className="jumbotron-button">
+                Search a Pokemon
+              </Button>
+            </Link>
+          </div>
         </div>
       </Jumbotron>
     </div>

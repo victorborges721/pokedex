@@ -22,6 +22,9 @@ const NavigationBar = () => {
           <LinkContainer to="/pokedex">
             <Nav.Link>Pokedex</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/searchpokemon">
+            <Nav.Link>Search Pokemon</Nav.Link>
+          </LinkContainer>
           <LinkContainer to="/typechart">
             <Nav.Link>TypeChart</Nav.Link>
           </LinkContainer>

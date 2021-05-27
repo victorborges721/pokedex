@@ -8,6 +8,13 @@
   align-items: center;
 }
 
+.Pokedex-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .Pokedex-buttons {
   display: flex;
   justify-content: center;
