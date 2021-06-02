@@ -13,7 +13,6 @@ const Card = ({ pokemon }) => {
 
   // create image url and pad National Dex number with 0's
   const pokeNum = getPokeNum(pokemon.id);
-
   const spriteUrl = getPokeSprite(pokemon);
 
   return (

@@ -29,9 +29,15 @@
   font-weight: 700;
 }
 
-.Modal-num {
+.Search-num {
+  font-size: 2rem;
   font-weight: 400;
   color: gray;
+}
+
+.Search-genus {
+  font-size: 1.75rem;
+  font-weight: 400;
 }
 
 .Search-info {
@@ -54,10 +60,58 @@
   width: 100%;
 }
 
-.Modal-evolutions {
-  background-color: #6c757d;
+.Search-evolutions {
+  background-color: grey;
   color: white;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 20px 20px;
   margin: 10px 0;
+  width: 100%;
+  /* max-height: 35vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.Search-evolutions-title {
+  font-size: 2rem;
+}
+
+/* .Search-evolutions-images-1 {
+  display: flex;
+  justify-content: space-around;
+}
+.Search-evolutions-images-2 {
+  display: flex;
+  justify-content: space-around;
+}
+.Search-evolutions-images-3 {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.Search-evolutions-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Search-evolution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.Search-evolution img {
+  width: 80%;
+  max-width: 25vh;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.Search-evolution-name {
+  text-transform: capitalize;
+  font-size: 1.25rem;
 }

@@ -7,40 +7,81 @@ import {
   getPokeHeightWeight,
   getPokeStats,
   getPokeSprite,
+  getPokeNum,
 } from "../../helpers/pokeCalcs";
 import typeColors from "../../data/typeColors";
 import "./style.css";
 
-const SearchDisplay = ({ pokemonQuery }) => {
+const SearchDisplay = ({
+  pokemonQuery,
+  pokemonQuerySpecies,
+  pokemonQueryEvo,
+  evoUrls,
+}) => {
+  // get URL for image of pokemon
+  const spriteUrl = getPokeSprite(pokemonQuery);
+  // get pokemon number
+  const pokeNum = getPokeNum(pokemonQuery.id);
   // pulls types from PokeAPI data
   const pokemonTypes = getPokeTypes(pokemonQuery);
   // determines weaknesses based on pokemon type(s). getMultipliers needed for dual type Pokemon.
   const weaknesses = getPokeWeaknesses(pokemonTypes);
-  // create array of possible Pokemon abilities
-  const pokemonAbilities = getPokeAbilities(pokemonQuery);
-  // // convert height from decimeters to feet/inches
-  // // convert weight from hectograms to lbs
+  // convert height from decimeters to feet/inches
+  // convert weight from hectograms to lbs
   const [pokemonFeet, pokemonInches, pokemonWeight] = getPokeHeightWeight(
     pokemonQuery
   );
-  const spriteUrl = getPokeSprite(pokemonQuery);
-
+  // create array of possible Pokemon abilities
+  const pokemonAbilities = getPokeAbilities(pokemonQuery);
   // pull pokemon stats from PokeAPI data
   const stats = getPokeStats(pokemonQuery);
+  // create className for evolution block of searchDisplay using the number of evolutions
+  const evoClass = `Search-evolutions-images-${evoUrls.length}`;
+
   return (
     <div>
       <Container>
         <Row>
-          {/* Pokemon Image */}
           <Col xs={12} md={5}>
+            {/* Pokemon Image */}
             <div className="Search-img">
               <img src={spriteUrl} alt={pokemonQuery.name} />
             </div>
+            {/* Pokemon Base Stats */}
+            <h5>Base Stats:</h5>
+            <table>
+              <tbody>
+                {stats.map((stat, index) => {
+                  return (
+                    <tr key={index} className="Search-stats">
+                      <td>{stat.stat}</td>
+                      <td className="Search-table-row">
+                        <ProgressBar
+                          now={stat.num}
+                          max="255"
+                          label={stat.num}
+                          variant="danger"
+                          striped
+                        />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </Col>
           {/* Pokemon Types */}
           <Col xs={12} md={7}>
-            <h1 className="Search-name">{pokemonQuery.name}</h1>
-
+            {/* Pokemon Name */}
+            <h1 className="Search-name">
+              {pokemonQuery.name} <span className="Search-num">#{pokeNum}</span>{" "}
+              <span className="Search-genus">
+                ({pokemonQuerySpecies.genera[7].genus})
+              </span>
+            </h1>
+            {/* Pokemon Flavor Text */}
+            <h5>{pokemonQuerySpecies.flavor_text_entries[0].flavor_text}</h5>
+            {/* Pokemon Types */}
             <div className="Search-types">
               <h5>Type(s):</h5>
               {pokemonTypes.map((type, index) => {
@@ -96,34 +137,24 @@ const SearchDisplay = ({ pokemonQuery }) => {
               </Container>
             </div>
             <Row>
-              {/* Pokemon Base Stats */}
-              <Col>
-                <h5>Base Stats:</h5>
-                <table>
-                  <tbody>
-                    {stats.map((stat, index) => {
+              <Container>
+                <div className="Search-evolutions">
+                  <h1 className="Search-evolutions-title">Evolutions</h1>
+                  <div className="Search-evolutions-images">
+                    {evoUrls.map((evo, index) => {
                       return (
-                        <tr key={index} className="Search-stats">
-                          <td>{stat.stat}</td>
-                          <td className="Search-table-row">
-                            <ProgressBar
-                              now={stat.num}
-                              max="255"
-                              label={stat.num}
-                              variant="danger"
-                              striped
-                            />
-                          </td>
-                        </tr>
+                        <div key={index} className="Search-evolution">
+                          <img src={evo.url} alt={evo.name} />
+                          <h6 className="Search-evolution-name">{evo.name}</h6>
+                        </div>
                       );
                     })}
-                  </tbody>
-                </table>
-              </Col>
+                  </div>
+                </div>
+              </Container>
             </Row>
           </Col>
         </Row>
-        <Row></Row>
       </Container>
     </div>
   );

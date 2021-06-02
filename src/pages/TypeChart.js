@@ -4,7 +4,9 @@ import typechart from "../images/typechart.png";
 const TypeChart = () => {
   return (
     <section className="section">
-      <img src={typechart} alt="type chart" />
+      <div className="typechart-img">
+        <img src={typechart} alt="type chart" />
+      </div>
     </section>
   );
 };
