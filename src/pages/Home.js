@@ -18,7 +18,7 @@ const Home = () => {
         <Container>
           <Row>
             {/* <Col xs={0} md={2}></Col> */}
-            <Col xsOffset={6} xs={6}>
+            <Col>
               <div className="jumbotron-text">
                 <h1 className="jumbotron-title">Gotta Catch 'Em All!</h1>
                 <p>

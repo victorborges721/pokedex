@@ -4,6 +4,9 @@ export async function getPokemon(url) {
       .then((res) => res.json())
       .then((data) => {
         resolve(data);
+      })
+      .catch((error) => {
+        console.log("ERROR!!!");
       });
   });
 }

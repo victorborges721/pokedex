@@ -21,24 +21,22 @@ const SearchPokemon = () => {
     const response = await getSearchPokemon(query);
     const results = await response.json();
     setPokemonQuery(results);
-    console.log(`${results.name} ${results.id}`);
+
     // get species information to find evolution chain id
     const responseSpecies = await getSearchPokemonSpecies(results.name);
     const resultsSpecies = await responseSpecies.json();
     setPokemonQuerySpecies(resultsSpecies);
-    console.log(resultsSpecies);
+
     // use evolution chain id to get evolution data
     let id = resultsSpecies.evolution_chain.url.match(/\d+/g)[1];
     const responseEvo = await getSearchPokemonEvo(id);
     const resultsEvo = await responseEvo.json();
     setPokemonQueryEvo(resultsEvo);
-    console.log(resultsEvo);
 
-    // use function get array of evolutions
+    // use function to get array of evolutions
     const evoData = resultsEvo.chain;
     let evoChain = [];
     evoChain = getEvolutions(evoData, evoChain);
-    console.log(evoChain);
 
     // loop over evolution array to get names and urls
     let tempEvoUrls = [];
