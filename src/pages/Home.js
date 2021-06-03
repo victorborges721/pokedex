@@ -17,7 +17,6 @@ const Home = () => {
       >
         <Container>
           <Row>
-            {/* <Col xs={0} md={2}></Col> */}
             <Col>
               <div className="jumbotron-text">
                 <h1 className="jumbotron-title">Gotta Catch 'Em All!</h1>
@@ -48,7 +47,6 @@ const Home = () => {
                 </div>
               </div>
             </Col>
-            {/* <Col xs={0} md={4}></Col> */}
           </Row>
         </Container>
       </Jumbotron>

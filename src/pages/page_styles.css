@@ -31,22 +31,21 @@
 
 .jumbotron {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .jumbotron-text {
   background-color: rgba(211, 211, 211, 0.6);
-  width: 50%;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 0 0 5rem;
 }
 .jumbotron-title {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .jumbotron-button {
+  margin-bottom: 10px;
   margin-right: 10px;
 }
 
@@ -59,4 +58,13 @@
 
 .typechart-img img {
   height: 90vh;
+}
+
+@media only screen and (min-width: 992px) {
+  .jumbotron-text {
+    width: 70%;
+  }
+  .jumbotron-title {
+    font-size: 4rem;
+  }
 }
