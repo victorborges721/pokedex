@@ -486,7 +486,6 @@ const pokemonList = [
   "Phione",
   "Manaphy",
   "Darkrai",
-  "Shaymin",
   "Arceus",
   "Victini",
   "Snivy",

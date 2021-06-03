@@ -6,7 +6,7 @@ import { CgPokemon } from "react-icons/cg";
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="danger" className="navbar">
+    <Navbar bg="danger" className="navbar" expand="lg">
       <Container>
         <LinkContainer to="/" className="logo">
           <Navbar.Brand>
@@ -14,24 +14,26 @@ const NavigationBar = () => {
             Pokédex
           </Navbar.Brand>
         </LinkContainer>
-
-        <Nav>
-          <LinkContainer to="/">
-            <Nav.Link>Home</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/pokedex">
-            <Nav.Link>Pokedex</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/searchpokemon">
-            <Nav.Link>Search Pokemon</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/typechart">
-            <Nav.Link>TypeChart</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/about">
-            <Nav.Link>About</Nav.Link>
-          </LinkContainer>
-        </Nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/pokedex">
+              <Nav.Link>Pokedex</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/searchpokemon">
+              <Nav.Link>Search Pokemon</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/typechart">
+              <Nav.Link>TypeChart</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/about">
+              <Nav.Link>About</Nav.Link>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
