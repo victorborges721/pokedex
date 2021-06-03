@@ -8,6 +8,7 @@ import {
   getPokeStats,
   getPokeSprite,
   getPokeNum,
+  getFlavorText,
 } from "../../helpers/pokeCalcs";
 import typeColors from "../../data/typeColors";
 import "./style.css";
@@ -35,8 +36,8 @@ const SearchDisplay = ({
   const pokemonAbilities = getPokeAbilities(pokemonQuery);
   // pull pokemon stats from PokeAPI data
   const stats = getPokeStats(pokemonQuery);
-  // create className for evolution block of searchDisplay using the number of evolutions
-  const evoClass = `Search-evolutions-images-${evoUrls.length}`;
+  // get first English flavor text from flavor_text_entries array
+  const flavorText = getFlavorText(pokemonQuerySpecies);
 
   return (
     <div>
@@ -80,7 +81,7 @@ const SearchDisplay = ({
               </span>
             </h1>
             {/* Pokemon Flavor Text */}
-            <h5>{pokemonQuerySpecies.flavor_text_entries[0].flavor_text}</h5>
+            <h5>{flavorText}</h5>
             {/* Pokemon Types */}
             <div className="Search-types">
               <h5>Type(s):</h5>

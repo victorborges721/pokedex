@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getPokemon } from "../../helpers/getPokemon";
+import { getPokemon } from "../../helpers/fetchData";
 import Card from "../Card";
 import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";

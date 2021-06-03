@@ -5,9 +5,8 @@ import {
   getSearchPokemon,
   getSearchPokemonSpecies,
   getSearchPokemonEvo,
-} from "../helpers/getSearchPokemon";
-import getEvolutions from "../helpers/getEvolutions";
-import { getPokeSprite } from "../helpers/pokeCalcs";
+} from "../helpers/fetchData";
+import { getPokeSprite, getEvolutions } from "../helpers/pokeCalcs";
 
 const SearchPokemon = () => {
   const [pokemonQuery, setPokemonQuery] = useState();
