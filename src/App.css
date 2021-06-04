@@ -22,7 +22,7 @@ a {
   transition-property: transform;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .hvr-grow:hover,
   .hvr-grow:focus,
   .hvr-grow:active {

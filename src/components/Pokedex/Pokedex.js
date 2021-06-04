@@ -9,7 +9,7 @@ const Pokedex = () => {
   const [nextUrl, setNextUrl] = useState("");
   const [prevUrl, setPrevUrl] = useState("");
   const [loading, setLoading] = useState(true);
-  const initialUrl = "https://pokeapi.co/api/v2/pokemon";
+  const initialUrl = "https://pokeapi.co/api/v2/pokemon/?limit=24";
 
   useEffect(() => {
     const fetchData = async () => {
