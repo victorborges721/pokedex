@@ -4,14 +4,11 @@ export async function getPokemon(url) {
       .then((res) => res.json())
       .then((data) => {
         resolve(data);
-      })
-      .catch((error) => {
-        console.log("ERROR!!!");
       });
   });
 }
 
-const baseUrl = "http://pokeapi.co/api/v2";
+const baseUrl = "https://pokeapi.co/api/v2";
 const query = {
   pokemon: "pokemon",
   pokemonSpecies: "pokemon-species",
