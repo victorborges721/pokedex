@@ -69,7 +69,13 @@ const Pokedex = () => {
           </div>
           <div className="grid-container">
             {pokemonData.map((pokemon) => {
-              return <Card key={pokemon.id} pokemon={pokemon} />;
+              return (
+                <Card
+                  key={pokemon.id}
+                  pokemon={pokemon}
+                  className="Pokedex-card"
+                />
+              );
             })}
           </div>
           <div className="Pokedex-buttons">
