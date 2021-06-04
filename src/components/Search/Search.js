@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./style.css";
 import pokemonList from "../../data/pokemonList";
+// import Dropdown from "../Dropdown";
 
 const Search = ({ searchPokemon }) => {
   const [search, setSearch] = useState("");
+
+  // const [value, setValue] = useState(null);
 
   // Find all inputs on the DOM which are bound to a datalist via their list attribute.
   const inputs = document.querySelector("#searchBox");
@@ -58,6 +61,15 @@ const Search = ({ searchPokemon }) => {
             return <option value={pokemon} key={index} />;
           })}
         </datalist>
+
+        {/* <div style={{ width: 200 }}>
+          <Dropdown
+            pokemonList={pokemonList}
+            value={value}
+            onChange={(val) => setValue(val)}
+          />
+        </div> */}
+
         <Button
           variant="danger"
           type="submit"
