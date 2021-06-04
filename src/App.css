@@ -21,10 +21,13 @@ a {
   -webkit-transition-property: transform;
   transition-property: transform;
 }
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  cursor: pointer;
+
+@media only screen and (min-width: 768px) {
+  .hvr-grow:hover,
+  .hvr-grow:focus,
+  .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 }

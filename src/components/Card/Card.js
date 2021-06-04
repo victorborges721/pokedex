@@ -37,6 +37,9 @@ const Card = ({ pokemon }) => {
             );
           })}
         </div>
+        <div>
+          <h6 className="Card-button">Pokedex Entry</h6>
+        </div>
       </div>
       {showModal && (
         <PokemonModal
