@@ -81,7 +81,7 @@ const SearchDisplay = ({
               </span>
             </h1>
             {/* Pokemon Flavor Text */}
-            <h5>{flavorText}</h5>
+            <h5>{flavorText.replace(/[^\x20-\x7E]/gim, " ")}</h5>
             {/* Pokemon Types */}
             <div className="Search-types">
               <h5>Type(s):</h5>
