@@ -40,7 +40,7 @@ const SearchDisplay = ({
   const flavorText = getFlavorText(pokemonQuerySpecies);
 
   return (
-    <div>
+    <div className="SearchDisplay">
       <Container>
         <Row>
           <Col xs={12} md={5}>
@@ -62,7 +62,6 @@ const SearchDisplay = ({
                           max="255"
                           label={stat.num}
                           variant="danger"
-                          striped
                         />
                       </td>
                     </tr>

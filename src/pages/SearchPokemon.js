@@ -51,7 +51,7 @@ const SearchPokemon = () => {
   };
 
   return (
-    <div>
+    <main>
       <div className="Search-bar">
         <Search searchPokemon={searchPokemon} />
       </div>
@@ -64,7 +64,7 @@ const SearchPokemon = () => {
           evoUrls={evoUrls}
         />
       ) : null}
-    </div>
+    </main>
   );
 };
 

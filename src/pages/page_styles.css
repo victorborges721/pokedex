@@ -29,6 +29,10 @@
   height: 20rem;
 }
 
+.apiLink {
+  color: blue;
+}
+
 .jumbotron {
   display: flex;
   justify-content: center;
@@ -36,7 +40,7 @@
 }
 
 .jumbotron-text {
-  background-color: rgba(211, 211, 211, 0.6);
+  background-color: rgba(211, 211, 211, 1);
   border-radius: 10px;
   padding: 20px;
 }

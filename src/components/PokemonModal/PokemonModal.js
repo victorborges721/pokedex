@@ -46,9 +46,10 @@ const PokemonModal = ({
         animation={false}
         size="lg"
         centered
+        aria-labelledby="modalTitle"
       >
         <Modal.Header closeButton>
-          <Modal.Title className="Modal-name">
+          <Modal.Title className="Modal-name" id="modalTitle">
             {pokemon.name} <span className="Modal-num">#{pokeNum}</span>
           </Modal.Title>
         </Modal.Header>
@@ -135,7 +136,6 @@ const PokemonModal = ({
                               max="255"
                               label={stat.num}
                               variant="danger"
-                              striped
                             />
                           </td>
                         </tr>

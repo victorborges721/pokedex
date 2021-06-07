@@ -1,9 +1,14 @@
 .logo {
   display: flex;
+  color: black !important;
 }
 
 .navbar {
   border-bottom: 4px black solid;
+}
+
+a.nav-link {
+  color: black !important;
 }
 
 .nav-link.active {

@@ -1,3 +1,7 @@
+.SearchDisplay {
+  margin-bottom: 30px;
+}
+
 .Search-img img {
   width: 100%;
   background-color: lightgrey;
@@ -32,7 +36,7 @@
 .Search-num {
   font-size: 2rem;
   font-weight: 400;
-  color: gray;
+  color: #474242;
 }
 
 .Search-genus {
@@ -61,7 +65,7 @@
 }
 
 .Search-evolutions {
-  background-color: grey;
+  background-color: #474242;
   color: white;
   border-radius: 10px;
   padding: 10px 20px;

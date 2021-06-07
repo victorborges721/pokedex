@@ -3,11 +3,13 @@ import typechart from "../images/typechart.png";
 
 const TypeChart = () => {
   return (
-    <section className="section">
-      <div className="typechart-img">
-        <img src={typechart} alt="type chart" />
-      </div>
-    </section>
+    <main>
+      <section className="section">
+        <div className="typechart-img">
+          <img src={typechart} alt="type chart" />
+        </div>
+      </section>
+    </main>
   );
 };
 

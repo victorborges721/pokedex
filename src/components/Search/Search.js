@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./style.css";
 import pokemonList from "../../data/pokemonList";
-// import Dropdown from "../Dropdown";
 
 const Search = ({ searchPokemon }) => {
   const [search, setSearch] = useState("");
 
-  // const [value, setValue] = useState(null);
-
   // Find all inputs on the DOM which are bound to a datalist via their list attribute.
-  const inputs = document.querySelector("#searchBox");
+  const inputs = document.querySelector("#search-box");
   let optionFound = false;
   // When the value of the input changes…
   if (inputs) {
@@ -47,14 +44,14 @@ const Search = ({ searchPokemon }) => {
   };
 
   return (
-    <div>
+    <div className="Search">
       <form onSubmit={handleSubmit}>
         <input
           list="pokemon"
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search..."
+          placeholder="e.g., Pikachu"
           autoFocus
-          id="searchBox"
+          id="search-box"
         />
         <datalist id="pokemon">
           {pokemonList.map((pokemon, index) => {
@@ -62,24 +59,19 @@ const Search = ({ searchPokemon }) => {
           })}
         </datalist>
 
-        {/* <div style={{ width: 200 }}>
-          <Dropdown
-            pokemonList={pokemonList}
-            value={value}
-            onChange={(val) => setValue(val)}
-          />
-        </div> */}
-
-        <Button
-          variant="danger"
-          type="submit"
-          onClick={() => handleSearch(search.toLowerCase())}
-        >
-          Search
-        </Button>
-        <Button type="reset" variant="dark">
-          Clear
-        </Button>
+        <div>
+          <Button
+            variant="danger"
+            type="submit"
+            onClick={() => handleSearch(search.toLowerCase())}
+            className="Search-btn"
+          >
+            Search
+          </Button>
+          <Button type="reset" variant="dark" className="Search-btn">
+            Clear
+          </Button>
+        </div>
       </form>
     </div>
   );

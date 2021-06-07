@@ -6,7 +6,7 @@ import "./page_styles.css";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Jumbotron
         style={{
           backgroundImage: `url(${bgimage})`,
@@ -50,7 +50,7 @@ const Home = () => {
           </Row>
         </Container>
       </Jumbotron>
-    </div>
+    </main>
   );
 };
 

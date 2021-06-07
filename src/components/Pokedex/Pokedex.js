@@ -52,7 +52,7 @@ const Pokedex = () => {
   };
 
   return (
-    <div>
+    <main>
       {loading ? (
         <h1 className="loading">Loading...</h1>
       ) : (
@@ -90,7 +90,7 @@ const Pokedex = () => {
           </div>
         </section>
       )}
-    </div>
+    </main>
   );
 };
 
