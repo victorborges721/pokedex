@@ -80,8 +80,8 @@ const SearchDisplay = ({
                 ({pokemonQuerySpecies.genera[7].genus})
               </span>
             </h1>
-            {/* Pokemon Flavor Text */}
-            <h5>{flavorText.replace(/[^\x20-\x7E]/gim, " ")}</h5>
+            {/* Pokemon Flavor Text w/ remove line breaks */}
+            <h5>{flavorText.replace(/[^\x20-\x7E]/gim, " ")}</h5>{" "}
             {/* Pokemon Types */}
             <div className="Search-types">
               <h5>Type(s):</h5>
