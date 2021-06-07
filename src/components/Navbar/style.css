@@ -5,3 +5,15 @@
 .navbar {
   border-bottom: 4px black solid;
 }
+
+.nav-link.active {
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+@media (min-width: 992px) {
+  .nav-link.active {
+    color: white !important;
+    background-color: #343a40 !important;
+  }
+}

@@ -16,8 +16,8 @@ const NavigationBar = () => {
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <LinkContainer to="/">
+          <Nav className="ml-auto" variant="pills">
+            <LinkContainer exact to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/pokedex">
