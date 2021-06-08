@@ -39,7 +39,7 @@ const PokemonModal = ({
   const stats = getPokeStats(pokemon);
 
   return (
-    <>
+    <React.Fragment>
       <Modal
         show={showModal}
         onHide={handleClose}
@@ -153,7 +153,7 @@ const PokemonModal = ({
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 
