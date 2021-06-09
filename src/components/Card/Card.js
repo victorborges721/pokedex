@@ -16,7 +16,7 @@ const Card = ({ pokemon }) => {
   const spriteUrl = getPokeSprite(pokemon);
 
   return (
-    <>
+    <React.Fragment>
       <div className="Card hvr-grow" onClick={handleOpen}>
         <div className="Card-img">
           <img src={spriteUrl} alt={pokemon.name} />
@@ -51,7 +51,7 @@ const Card = ({ pokemon }) => {
           key={pokemon.id}
         />
       )}
-    </>
+    </React.Fragment>
   );
 };
 
