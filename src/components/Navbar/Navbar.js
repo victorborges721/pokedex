@@ -16,21 +16,21 @@ const NavigationBar = () => {
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto" variant="pills">
+          <Nav className="ml-auto" variant="pills" activeKey="/">
             <LinkContainer exact to="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link eventKey="link-1">Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/pokedex">
-              <Nav.Link>Pokédex</Nav.Link>
+              <Nav.Link eventKey="link-2">Pokédex</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/searchpokemon">
-              <Nav.Link>Search Pokemon</Nav.Link>
+              <Nav.Link eventKey="link-3">Search Pokemon</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/typechart">
-              <Nav.Link>TypeChart</Nav.Link>
+              <Nav.Link eventKey="link-4">TypeChart</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/about">
-              <Nav.Link>About</Nav.Link>
+              <Nav.Link eventKey="link-5">About</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
