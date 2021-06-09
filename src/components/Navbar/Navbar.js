@@ -8,10 +8,12 @@ const NavigationBar = () => {
   return (
     <Navbar bg="danger" className="navbar" expand="lg">
       <Container>
-        <Navbar.Brand>
-          <CgPokemon size="2rem" />
-          Pokédex
-        </Navbar.Brand>
+        <LinkContainer to="/" className="logo">
+          <Navbar.Brand>
+            <CgPokemon size="2rem" />
+            Pokédex
+          </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto" variant="pills">
