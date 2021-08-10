@@ -1,6 +1,6 @@
 # Pokedex
 
-This app uses the PokeAPI to give you a look into the incredible world of Pokémon. The Pokédex allows you to view a group of Pokémon at a time. You can take a closer look at any Pokémon by clicking it to learn more. The 'Search Pokemon' feature allows to access deeper research on any Pokémon before you decide to add it to your team. Make sure you've got a balanced team before heading out into the Pokémon world!
+This app uses the [PokeAPI](https://pokeapi.co/) to give you a look into the incredible world of Pokémon. The Pokédex allows you to view a group of Pokémon at a time. You can take a closer look at any Pokémon by clicking it to learn more. The 'Search Pokemon' feature allows to access deeper research on any Pokémon before you decide to add it to your team. Make sure you've got a balanced team before heading out into the Pokémon world!
 
 ## Available Scripts
 
