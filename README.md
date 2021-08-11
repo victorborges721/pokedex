@@ -2,6 +2,8 @@
 
 This app uses the [PokeAPI](https://pokeapi.co/) to give you a look into the incredible world of Pokémon.
 
+[Visit the live app!](https://borges-pokedex.netlify.app/)
+
 ## Features
 
 - Browse Pokemon from all 8 generations
